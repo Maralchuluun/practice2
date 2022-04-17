@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 50px;
+            height: 60px;
+            background-color: deeppink;
+            margin-right: 10px;
+        }
+        .hairtsag{
+            display: flex;
+            flex-direction: row;
+        }
+    </style>
+</head>
+<body>
+    <div class="hairtsag">
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+    <div class="box" id="box3"></div>
+    <button id="btn2">Click</button>
+    </div>
+    <script>
+    x=0
+    btn2.addEventListener('click',function(){
+       if(x==0){
+           box1.style.opacity='0'
+           x+=1
+       }else if(x==1){
+           box1.style.opacity='1'
+           box2.style.opacity='0'
+           x+=1
+       }else if(x==2){
+           box2.style.opacity='1'
+           box3.style.opacity='0'
+           x+=1
+       }
+       else{
+           box3.style.opacity='1'
+           x=0
+       }
+    })
+    btn2=function(){
+    if(box1.style.visibility=='visible'){
+        if(box2.style.visibility=='visible'){
+            if(box3.style.visibility=='visible'){
+                box1.style.visibility="hidden";
+                box2.style.visibility="visible";
+                box3.style.visibility="visible";
+            }else if(box1.style.visibility=="hidden"){
+                box1.style.visibility="visible";
+                box2.style.visibility="hidden";
+                box3.style.visibility="visible";
+            }else if(box2.style.visibility=="hidden"){
+               box1.style.visibility=="visible";
+               box2.style.visibility=="visible";
+               box3.style.visibility=="hidden";
+            }else if(box3.style.visibility=="hidden"){
+               box1.style.visibility="visible";
+               box2.style.visibility="visible";
+               box3.style.visibility="visible";
+            }
+        }else if(box1.style.visibility=="hidden"){
+            box1.style.visibility="visible";
+            box2.style.visibility="hidden";
+            box3.style.visibility="visible";
+        }else if(box2.style.visibility=="hidden"){
+            box1.style.visibility=="visible";
+            box2.style.visibility=="visible";
+            box3.style.visibility=="hidden";
+        }else if(box3.style.visibility=="hidden"){
+            box1.style.visibility="visible";
+            box2.style.visibility="visible";
+            box3.style.visibility="visible";
+    }
+    }else if(box1.style.visibility=="hidden"){
+        box1.style.visibility="visible";
+        box2.style.visibility="hidden";
+        box3.style.visibility="visible";
+    }else if(box2.style.visibility=="hidden"){
+        box1.style.visibility=="visible";
+        box2.style.visibility=="visible";
+        box3.style.visibility=="hidden";
+    }else if(box3.style.visibility=="hidden"){
+        box1.style.visibility="visible";
+        box2.style.visibility="visible";
+        box3.style.visibility="visible";
+    }
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0%;
+            padding: 0%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: chartreuse;
+        }
+        .box2{
+            width: 70px;
+            height: 70px;
+            background-color: cyan;
+        }
+        .box3{
+            width: 30px;
+            height: 30px;
+            background-color: darkorchid;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="btn()">Click</button>
+    <div class="box">
+        <div class="box1" id="box1"></div>
+        <div class="box2" id="box2"></div>
+        <div class="box3" id="box3"></div>
+    </div>
+    <script>
+        btn=function() {
+            x = document.getElementById('box1').className
+            document.getElementById('box1').className=document.getElementById('box2').className;
+            box2.className=box3.className;
+            box3.className= x;
+        }
+
+    </script>
+</body>
+</html>
